@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B280A332-968E-4992-825D-69E0E169975C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BanHangBussiness.Save</RootNamespace>
+    <AssemblyName>BanHangBussiness.Save</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DonHang_Bussiness_Save.cs" />
+    <Compile Include="HangHoa_Bussiness_Save.cs" />
+    <Compile Include="HoaDon_Bussiness_Save.cs" />
+    <Compile Include="KhachHang_Bussiness_Save.cs" />
+    <Compile Include="NhaCungCap_Bussiness_Save.cs" />
+    <Compile Include="NhanVien_Bussiness_Save.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BanHang.Domain\BanHang.Domain.csproj">
+      <Project>{a6c0ac30-32d5-494f-98bf-1c7a126493d3}</Project>
+      <Name>BanHang.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BanHang.Library_01\BanHang.Library_01.csproj">
+      <Project>{577ecfe1-795b-4a9f-8fc7-d3ea1d0e6c43}</Project>
+      <Name>BanHang.Library_01</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BanHang.Reposiroty.NhanVien\BanHang.Reposiroty_NhanVien.csproj">
+      <Project>{6cc886d8-d2f4-4308-a6a4-4411e28aab6f}</Project>
+      <Name>BanHang.Reposiroty_NhanVien</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BanHang.Reposiroty_DonHang\BanHang.Reposiroty_DonHang.csproj">
+      <Project>{c29bfbfb-c692-416a-943c-dedfb936ab3c}</Project>
+      <Name>BanHang.Reposiroty_DonHang</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BanHang.Reposiroty_HoaDon\BanHang.Reposiroty_HoaDon.csproj">
+      <Project>{a6a64d85-ad7c-48a4-b5a1-71ff24acd292}</Project>
+      <Name>BanHang.Reposiroty_HoaDon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BanHang.Reposiroty_KhachHang\BanHang.Reposiroty_KhachHang.csproj">
+      <Project>{e92b4b5e-df8e-4f6d-91d1-8d09a1d0fd48}</Project>
+      <Name>BanHang.Reposiroty_KhachHang</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BanHang.Reposiroty_NhaCungCap\BanHang.Reposiroty_NhaCungCap.csproj">
+      <Project>{40b3c5db-1534-4561-bc3c-6486d19dd882}</Project>
+      <Name>BanHang.Reposiroty_NhaCungCap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HangHoa.Reposiroty_HangHoa\BanHang.Reposiroty_HangHoa.csproj">
+      <Project>{cca34f75-eea0-4029-819d-8eb29c75ef8a}</Project>
+      <Name>BanHang.Reposiroty_HangHoa</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
